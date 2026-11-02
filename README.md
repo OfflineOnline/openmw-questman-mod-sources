@@ -46,6 +46,6 @@ It writes the data file into the mod and a readable questSourcesData_report.txt 
 ---
 
 ## Credits & License
-- Built for **Questman** by its original authors.
+- Built for **Questman** by its original author [fixerm](https://www.nexusmods.com/profile/fixerm)  
 - Compatible with **OpenMW**.
 - Released under the [MIT License](LICENSE).
