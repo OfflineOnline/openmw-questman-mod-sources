@@ -17,6 +17,13 @@ Splits Questman's generic "Other" bucket into dedicated add-on entries per mod, 
 - **Compatibility:** Should work for any other modlist out there too, in the example I used NEMAS 
 
 ---
+## Requirements & Python Note
+
+The generator tool located in `tools/build_quest_sources.py` is currently **Python-dependent** (requires Python 3.8+ installed on your system).
+
+> **Standalone Executable:**  
+> If there is community interest or request, a standalone Windows executable (`.exe`) will be packaged so the generator can be run without an existing Python installation. Feel free to open an Issue in this repository if you need it.
+
 
 ## Installation with MO2 (Recommended)
 - Install the zip as a new MO2 mod below Questman
