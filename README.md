@@ -41,7 +41,7 @@ It writes the data file into the mod and a readable questSourcesData_report.txt 
 ---
 
 ## AI Transparency Notice
-> Used Claude, Tested for functionality by myself a human ~
+> Used Claude, Tested for functionality by myself. a human ~
 
 ---
 
