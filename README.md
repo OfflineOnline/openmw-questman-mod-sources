@@ -4,7 +4,7 @@
 # Questman Mod Sources
 
 An add-on for **[Questman 1.6](https://www.nexusmods.com/morrowind/mods/59493)** on **OpenMW 0.50+**.
-Tested on NEMAS modlist
+Tested on [NEMAS](https://github.com/Sting-DR/Nerevar-Moon-and-Star) modlist
 
 Splits Questman's generic "Other" bucket into dedicated add-on entries per mod, providing individual progress tracking, filter dropdown entries, and category grouping for third-party quests.
 
