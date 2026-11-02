@@ -1,0 +1,7 @@
+# Optional: force a category. One per line:  <quest id | id pattern with * | src:Mod title> = <value>
+# value: a faction (Fighters Guild, Mages Guild, Thieves Guild, Morag Tong, Imperial Legion, Imperial Cult,
+#        Tribunal Temple, East Empire Company, House Hlaalu / Redoran / Telvanni / Indoril, ...)
+#        or one of: main, daedric, vampire, bounty, misc
+# Lines starting with # are ignored. Run run_generator.bat again afterwards.
+# cs_crab* = misc
+# src:Some Guild Mod = Thieves Guild

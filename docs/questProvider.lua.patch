@@ -1,0 +1,22 @@
+--- ../questProvider.orig.lua	2026-10-31 12:33:56.401032609 +0100
++++ Scripts/Questman/questProvider.lua	2026-10-31 12:33:56.433265064 +0100
+@@ -16,6 +16,7 @@
+ 
+ local icons = require('scripts.questman.icons')
+ local questMetadata = require('scripts.questman.questMetadata')
++local questSources = require('scripts.questman.questSources')   -- splits the "Other" add-on by mod (plugin / id prefix)
+ local givers = require('scripts.questman.givers')
+ local questList = require('scripts.questman.questList')
+ local uiSearch = require('scripts.questman.uiSearch')   -- Cyrillic-aware lower(): topic-link matching, topic sort
+@@ -117,6 +118,11 @@
+ }
+ local ADDON_LABELS, ADDON_ORDER = { unknown = 'Other' }, {}
+ for i, a in ipairs(ADDONS) do ADDON_LABELS[a.slug] = a.title; ADDON_ORDER[a.slug] = i end
++-- Mod add-ons found by questSources (src_<mod> / pfx_<prefix>) get their title on demand; they sort
++-- alphabetically between the built-in add-ons and "Other" (rank 50, see addonRank).
++setmetatable(ADDON_LABELS, { __index = function(_, key) return questSources.title(key) end })
++questSources.init(questMetadata.ruled)
++questMetadata.setFallback(questSources.classify)
+ -- any unlisted add-on sorts alphabetical (rank 50); the 'unknown' catch-all ("Other") always last.
+ local function addonRank(key) return ADDON_ORDER[key] or (key == 'unknown' and 99) or 50 end
+ local function addonRowLess(x, y)

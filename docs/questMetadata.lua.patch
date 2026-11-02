@@ -1,0 +1,43 @@
+--- ../questMetadata.orig.lua	2026-10-31 12:33:56.399000736 +0100
++++ Scripts/Questman/questMetadata.lua	2026-10-31 12:57:35.455185134 +0100
+@@ -256,7 +256,7 @@
+ -- persisted quest-filter key); the user-facing add-on TITLE is defined once in questProvider's ADDONS
+ -- table. `faction` is the logical name (a `factions` key); `factionId` is its FACT editor id for the
+ -- engine's localized display. See "Lookup model" above.
+-local function get(id)
++local function ruled(id)
+     if not id then return nil end
+     id = id:lower()
+ 
+@@ -295,7 +295,31 @@
+     }
+ end
+ 
++-- MOD SOURCES (questSources.lua): ids the rules above can't place (no add-on) get a second chance. The
++-- fallback is injected by questProvider (keeps this module free of engine deps). It receives the lowercase
++-- id and returns { addon = slug, category = ... | faction = ... } or nil. Whatever the rules DID decide (category, faction)
++-- is kept; only the missing add-on is filled in.
++local fallback
++local function setFallback(fn) fallback = fn end
++
++local function get(id)
++    local r = ruled(id)
++    if (r and r.addon) or not fallback or not id then return r end
++    local f = fallback(id:lower())
++    if not f then return r end
++    local faction = (r and r.faction) or f.faction
++    local fe = faction and factions[faction]
++    return {
++        addon     = f.addon,
++        category  = (r and r.category) or f.category or (fe and fe.category),
++        faction   = faction,
++        factionId = (r and r.factionId) or (fe and fe.id),
++    }
++end
++
+ return {
++    ruled          = ruled,       -- rules only, no mod-source fallback (questSources uses it to find unclaimed ids)
++    setFallback    = setFallback,
+     factions       = factions,
+     finalQuests    = finalQuests,
+     allAddonsRules = allAddonsRules,
