@@ -36,6 +36,7 @@ The generator tool located in `tools/build_quest_sources.py` is currently **Pyth
    - `MO2_MODS`: Path to your MO2 `mods` directory.
    - `MODLIST`: Path to your active profile's `modlist.txt`.
    - `GAME_DATA`: Path to Morrowind's vanilla `Data Files` folder *(essential so vanilla quests aren't accidentally credited to random patch plugins)*.
+     
    *(The file already contains working example paths to show you the exact format).*
 3. **Run the Generator:**  
    Double-click `run_generator.bat`.  
