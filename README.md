@@ -14,7 +14,7 @@ Splits Questman's generic "Other" bucket into dedicated add-on entries per mod, 
 - **Individual Mod Tracking:** Replaces the catch-all "Other" group with a dedicated row per mod in Questman's Progress tab.
 - **Smart Categorization:** Automatically maps quests to Questman categories (Guild, Great House, Daedric, Vampire, Bounty, Main Quest) or falls back to "Miscellaneous Quests".
 - **Generator Pipeline:** Includes Python tooling (`tools/build_quest_sources.py`) to regenerate quest source mappings and categories.
-- **Compatibility:** Works alongside other Questman extensions such as *Questman Notes*.
+- **Compatibility:** Should work for any other modlist out there too, in the example I used NEMAS
 
 ---
 
