@@ -19,9 +19,9 @@ Splits Questman's generic "Other" bucket into dedicated add-on entries per mod, 
 ---
 
 ## Installation with MO2 (Recommended)
-Install the zip as a new with MO2 mod below Questman
-Install Python 3 if you don’t have it.
-Open tools\run_generator.bat in a text editor and set the three paths at the top: your MO2 mods folder, the profile’s modlist.txt, and Morrowind’s Data Files folder. (I let My own paths there as example for you)
+- Install the zip as a new with MO2 mod below Questman
+- Install Python 3 if you don’t have it.
+- Open tools\run_generator.bat in a text editor and set the three paths at the top: your MO2 mods folder, the profile’s modlist.txt, and Morrowind’s Data Files folder. (I let My own paths there as example for you)
 The Morrowind folder keeps vanilla quests from being credited to patch mods.
 Run it. 
 It writes the data file into the mod and a readable questSourcesData_report.txt listing every mod found, its quest count and example ids. If a name looks wrong, put plugin = Nicer Name in tools\renames.txt and run it again.
